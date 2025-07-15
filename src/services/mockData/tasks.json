@@ -1,0 +1,90 @@
+[
+  {
+    "Id": 1,
+    "title": "Complete project proposal",
+    "description": "Finish the quarterly project proposal for the new client onboarding system",
+    "categoryId": 1,
+    "priority": "high",
+    "dueDate": "2024-12-30",
+    "completed": false,
+    "createdAt": "2024-12-15T10:00:00Z",
+    "completedAt": null
+  },
+  {
+    "Id": 2,
+    "title": "Review code changes",
+    "description": "Review and approve the pull requests for the authentication module",
+    "categoryId": 1,
+    "priority": "medium",
+    "dueDate": "2024-12-28",
+    "completed": false,
+    "createdAt": "2024-12-15T11:00:00Z",
+    "completedAt": null
+  },
+  {
+    "Id": 3,
+    "title": "Schedule team meeting",
+    "description": "Organize the weekly team sync meeting for next week",
+    "categoryId": 1,
+    "priority": "low",
+    "dueDate": "2024-12-27",
+    "completed": true,
+    "createdAt": "2024-12-14T09:00:00Z",
+    "completedAt": "2024-12-16T14:30:00Z"
+  },
+  {
+    "Id": 4,
+    "title": "Buy groceries",
+    "description": "Get milk, bread, eggs, and vegetables for the week",
+    "categoryId": 2,
+    "priority": "medium",
+    "dueDate": "2024-12-26",
+    "completed": false,
+    "createdAt": "2024-12-15T08:00:00Z",
+    "completedAt": null
+  },
+  {
+    "Id": 5,
+    "title": "Call dentist",
+    "description": "Schedule appointment for routine cleaning",
+    "categoryId": 2,
+    "priority": "low",
+    "dueDate": "2024-12-29",
+    "completed": false,
+    "createdAt": "2024-12-15T12:00:00Z",
+    "completedAt": null
+  },
+  {
+    "Id": 6,
+    "title": "Read design patterns book",
+    "description": "Continue reading chapter 5 about observer pattern",
+    "categoryId": 3,
+    "priority": "low",
+    "dueDate": null,
+    "completed": false,
+    "createdAt": "2024-12-14T15:00:00Z",
+    "completedAt": null
+  },
+  {
+    "Id": 7,
+    "title": "Learn TypeScript",
+    "description": "Complete the TypeScript course on the learning platform",
+    "categoryId": 3,
+    "priority": "medium",
+    "dueDate": "2024-12-31",
+    "completed": false,
+    "createdAt": "2024-12-13T10:00:00Z",
+    "completedAt": null
+  },
+  {
+    "Id": 8,
+    "title": "Plan weekend trip",
+    "description": "Research and book hotel for the weekend getaway",
+    "categoryId": 2,
+    "priority": "low",
+    "dueDate": "2024-12-25",
+    "completed": true,
+    "createdAt": "2024-12-12T16:00:00Z",
+    "completedAt": "2024-12-15T18:45:00Z"
+  }
+]
