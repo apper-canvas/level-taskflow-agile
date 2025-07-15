@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React, { forwardRef, useState } from "react";
 import { motion } from "framer-motion";
-import Card from "@/components/atoms/Card";
-import Checkbox from "@/components/atoms/Checkbox";
+import { format } from "date-fns";
+import ApperIcon from "@/components/ApperIcon";
 import Badge from "@/components/atoms/Badge";
 import Button from "@/components/atoms/Button";
-import ApperIcon from "@/components/ApperIcon";
-import { format } from "date-fns";
+import Card from "@/components/atoms/Card";
+import Checkbox from "@/components/atoms/Checkbox";
+import categoriesData from "@/services/mockData/categories.json";
+import tasksData from "@/services/mockData/tasks.json";
 
-const TaskCard = ({ task, category, onToggleComplete, onDelete, onEdit }) => {
+const TaskCard = forwardRef(({ task, category, onToggleComplete, onDelete, onEdit }, ref) => {
   const [isCompleting, setIsCompleting] = useState(false);
 
   const handleToggleComplete = async () => {
@@ -38,7 +40,8 @@ const TaskCard = ({ task, category, onToggleComplete, onDelete, onEdit }) => {
   const isOverdue = task.dueDate && new Date(task.dueDate) < new Date() && !task.completed;
 
   return (
-    <motion.div
+<motion.div
+      ref={ref}
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -10 }}
@@ -114,14 +117,13 @@ const TaskCard = ({ task, category, onToggleComplete, onDelete, onEdit }) => {
               >
                 {task.priority}
               </Badge>
-
-              {/* Due Date */}
+{/* Due Date */}
               {task.dueDate && (
-                <div className={`flex items-center gap-1 text-xs ${
-                  isOverdue ? "text-error" : "text-gray-500"
-                }`}>
-                  <ApperIcon name="Calendar" size={14} />
-                  {format(new Date(task.dueDate), "MMM d, yyyy")}
+                <div className="flex items-center gap-1">
+                  <ApperIcon name="Calendar" size={14} className="text-gray-500" />
+                  <span className={`text-xs ${isOverdue ? "text-error" : "text-gray-500"}`}>
+                    {format(new Date(task.dueDate), "MMM d")}
+                  </span>
                   {isOverdue && (
                     <Badge variant="error" size="sm" className="ml-1">
                       Overdue
@@ -135,6 +137,8 @@ const TaskCard = ({ task, category, onToggleComplete, onDelete, onEdit }) => {
       </Card>
     </motion.div>
   );
-};
+});
+
+TaskCard.displayName = 'TaskCard';
 
 export default TaskCard;
